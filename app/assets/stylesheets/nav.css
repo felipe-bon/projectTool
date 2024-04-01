@@ -1,0 +1,10 @@
+/* Define a cor do texto padrão para preto */
+.nav-link {
+    color: white;
+  }
+  
+  /* Define a cor do texto para branco quando a tab está ativa */
+  .nav-link[aria-selected="true"] {
+    color: black;
+  }
+  

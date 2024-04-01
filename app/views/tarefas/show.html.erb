@@ -1,0 +1,33 @@
+<!-- app/views/tarefas/show.html.erb -->
+<%= stylesheet_link_tag 'tarefa', media: 'all' %>
+<%= content_tag :div, class: "details-container" do %>
+  <h1>Detalhes da Tarefa</h1>
+
+  <div>
+    <strong>Descrição:</strong>
+    <%= @tarefa.descricao_tarefa %>
+  </div>
+
+  <div>
+    <strong>Etapa:</strong>
+    <% etapa = ["Backlog", "To do", "Doing", "Done", "Testing"] %>
+    <%= etapa[(@tarefa.etapa)-1] %>
+  </div>
+
+  <div>
+    <strong>Prioridade:</strong>
+    <%= @tarefa.prioridade %>
+  </div>
+
+  <div>
+    <strong>Vencimento:</strong>
+    <%= @tarefa.vencimento.strftime("%d/%m/%Y") %>
+  </div>
+
+  <div>
+  <strong>Responsável:</strong>
+  <%= @responsavel %>
+</div>
+
+  <%= link_to "Voltar", projeto_path(id: @projeto.id), class: "back-link" %>
+<% end %>

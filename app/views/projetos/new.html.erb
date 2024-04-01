@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Novo Projeto</title>
+  <%= stylesheet_link_tag 'index', media: 'all' %>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container login-form">
+      <h2>Criar Novo Projeto</h2>
+
+      <%= form_with(model: @projeto, url: projetos_path(cargo: params[:cargo]), class: "form-group") do |form| %>
+        <% if @projeto.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@projeto.errors.count, "error") %> prohibited this projeto from being saved:</h2>
+            <ul>
+              <% @projeto.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= form.label :nome, class: "form-label" %>
+          <%= form.text_field :nome, class: "form-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :cargo, "Cargo:", class: "form-label" %>
+          <%= form.select :cargo, options_for_select(["DEV", "PO", "SM"]), {}, class: "form-select" %>
+        </div>
+
+        <div class="">
+          <%= form.submit "Salvar Projeto", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+
+      <%= link_to "Voltar", projetos_path, class: "btn btn-secondary" %>
+    </div>
+    
+    <div class="form-container login-form">
+      <h2>Entrar em um Projeto</h2>
+
+      <form action="<%= entrar_projeto_projetos_path %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <label for="cargo">Cargo:</label>
+        <select name="cargo" id="cargo">
+          <option value="DEV">DEV</option>
+          <option value="PO">PO</option>
+          <option value="SM">SM</option>
+        </select>
+        <br>
+        <label for="codigo_de_acesso">Código de Acesso:</label>
+        <input type="text" id="codigo_de_acesso" name="codigo_de_acesso">
+        <br>
+        <input type="submit" value="Enviar">
+      </form>
+      
+    </div>
+  </div>
+</body>
+</html>

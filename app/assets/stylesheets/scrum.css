@@ -1,0 +1,106 @@
+/* app/assets/stylesheets/custom.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+
+.container {
+  display: flex;
+  flex-direction: column; /* Organiza os itens em coluna */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  height: 100%; /* Preenche a altura da janela */
+}
+
+.row{
+ 
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    height: 600px; /* Definindo uma altura máxima para as colunas */
+    width: 1500px;
+    overflow-x: overflow;
+    overflow-y: hidden;
+    white-space:nowrap;
+    display:inline-block;
+    /* position: absolute; Define a posição absoluta */
+    /* top: 50%; Define o topo a 50% da altura do pai */
+    /* left: 50%; Define a esquerda a 50% da largura do pai */
+    /* transform: translate(-50%, -50%); Move a div de volta metade da sua largura e altura */
+    border-radius: 10px; /* Borda arredondada */
+}
+
+/* Estilo para o título do projeto */
+h1 {
+    color: #333; /* Cor do texto */
+    margin-bottom: 20px; /* Margem inferior */
+    text-align: center;
+  }
+
+.projeto_titulo{
+  color:whitesmoke
+}
+  
+  /* Estilo para o nome do projeto */
+  p {
+    font-weight: bold; /* Texto em negrito */
+  }
+  
+  /* Estilo para cada etapa do quadro Scrum */
+  .col-md-4 {
+    background-color: #f5f5f5; /* Cor de fundo cinza claro */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Borda arredondada */
+    margin-bottom: 20px; /* Margem inferior */
+    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* Adicionando uma borda para separar as colunas */
+    height: 500px; /* Definindo uma altura máxima para as colunas */
+    top: 50%; /* Define o topo a 50% da altura do pai */
+    transform: translate(0%, -50%); /* Move a div de volta metade da sua largura e altura */
+    overflow-y: auto; /* Permitindo rolagem vertical quando houver mais conteúdo do que o espaço disponível */
+    display:inline-block;
+  }
+  
+  /* Estilo para o título de cada etapa */
+  h2 {
+    color: #333; /* Cor do texto */
+  }
+
+
+  h1,h2 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Estilo para os cartões de tarefa */
+  .card {
+    margin-bottom: 15px; /* Margem inferior */
+    border-radius: 20px; /* Borda arredondada */
+    overflow-x:hidden;
+    overflow-y: auto;
+  }
+  
+  /* Estilo para o título da tarefa */
+  .card-title {
+    font-size: 18px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+  }
+  
+  /* Estilo para o texto da etapa da tarefa */
+  .card-text {
+    color: #777; /* Cor do texto */
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

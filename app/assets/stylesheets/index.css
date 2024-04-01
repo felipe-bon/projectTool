@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around; 
+  align-items: flex-start; 
+  height: 100vh; 
+  margin-top: 10px;
+}
+
+.form-container {
+  background-color: #444;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  width: 500px;
+}
+
+.form-container h2 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #666;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .form-container {
+    width: 80%;
+  }
+}
+
+/* Estilos para a text_area */
+.form-textarea {
+  width: 100%; /* Define a largura para ocupar todo o espaço disponível */
+  padding: 10px; /* Adiciona espaço interno para melhorar a legibilidade */
+  border: 1px solid #ccc; /* Adiciona uma borda cinza */
+  border-radius: 5px; /* Adiciona cantos arredondados */
+  resize: vertical; /* Permite redimensionamento vertical */
+  min-height: 100px; /* Define a altura mínima */
+  max-height: 200px; /* Define a altura máxima */
+  font-family: Arial, sans-serif; /* Define a fonte do texto */
+  color: #333; /* Define a cor do texto */
+  background-color: #666;
+}
+
+.form-textarea:focus {
+  border-color: #007bff; /* Muda a cor da borda quando a text_area está em foco */
+}

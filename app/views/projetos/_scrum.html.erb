@@ -1,0 +1,77 @@
+<%= stylesheet_link_tag "scrum", "data-turbo-track": "reload" %>
+
+
+    <div class="container">
+    
+      <div class="row">
+      
+        <div class="col-md-4">
+          <h2>Backlog</h2>
+          <% @projeto.tarefas.where(etapa: 1).each do |tarefa| %>
+            <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="card-content">
+                  <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
+                  <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        
+        <div class="col-md-4">
+          <h2>To do</h2>
+          <% @projeto.tarefas.where(etapa: 2).each do |tarefa| %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
+                <p class="card-text"><strong>Etapa:</strong> <%= tarefa.etapa %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      
+        <div class="col-md-4">
+          <h2>Doing</h2>
+          <% @projeto.tarefas.where(etapa: 3).each do |tarefa| %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
+                <p class="card-text"><strong>Etapa:</strong> <%= tarefa.etapa %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="col-md-4">
+          <h2>Done</h2>
+          <% @projeto.tarefas.where(etapa: 4).each do |tarefa| %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
+                <p class="card-text"><strong>Etapa:</strong> <%= tarefa.etapa %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="col-md-4">
+          <h2>Testing</h2>
+          <% @projeto.tarefas.where(etapa: 5).each do |tarefa| %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
+                <p class="card-text"><strong>Etapa:</strong> <%= tarefa.etapa %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      
+      </div>     
+        <a href="<%= new_projeto_tarefa_path(projeto_id: @projeto.id) %>" class="button">Criar Nova Tarefa</a>
+    </div>
+
+    </div>

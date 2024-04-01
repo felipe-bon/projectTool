@@ -1,0 +1,18 @@
+<div class="card-group">
+
+  <% @projetos.each do |projeto| %>
+    <% membro_atual = @membros.select { |membro| membro.projeto_id == projeto.id }.first %>
+  
+    <div class="card">
+        <div class="card-body">
+        <h5 class="card-title">Projeto: <%= projeto.nome %> </h5>
+        <p class="card-text">Codigo de Acesso: <%= projeto.codigo_de_acesso %> </p>
+        <p class="card-text">Cargo: <%= membro_atual.cargo %> </p>
+        <p class="card-text"><small class="text-muted">Criado em: <%= projeto.created_at %> </small></p>
+        </div>
+        <%= link_to "Acessar Projeto", projeto_path(id: projeto.id), class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+  
+</div>

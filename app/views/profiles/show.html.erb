@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil</title>
+  <%= stylesheet_link_tag 'home', media: 'all' %>
+  
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+        <h1 class="display-4"><%= @usuario.nome %></h1>
+        <p class="lead"> <%= @usuario.email %> </p>
+        <p class="lead">Seus Projetos:</p>
+        <p class="lead"><%= render "projetoInCard"%> </p>
+
+        <hr class="my-4">
+        <%= link_to "Editar Perfil", edit_user_registration_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+</body>

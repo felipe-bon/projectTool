@@ -1,0 +1,44 @@
+/* app/assets/stylesheets/tarefas.css */
+
+/* Estilo para o título */
+
+body{
+  color: #333;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para os detalhes da tarefa */
+  .details-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .details-container div {
+    margin-bottom: 10px;
+  }
+  
+  .details-container strong {
+    font-weight: bold;
+  }
+  
+  /* Estilo para o link de voltar */
+  .back-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .back-link:hover {
+    background-color: #0056b3;
+  }
+  

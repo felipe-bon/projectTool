@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectTool</title>
+  <%= stylesheet_link_tag 'home', media: 'all' %>
+  
+</head>
+<body>
+  <header>
+
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-4">ProjectTool</h1>
+      <p class="lead">Uma ferramenta para gerenciar projetos de software de forma compartilhada, utilizando metodologias ágeis como Scrum, Kanban e muito mais.</p>
+      <% if user_signed_in? %>
+        <p class="lead">Bem vindo!</p>
+      <%else%>
+        <p class="lead">Entre ou crie uma conta.</p>
+      <%end%>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'nav', media: 'all' %>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="scrum-tab" data-toggle="tab" href="#scrum" role="tab" aria-controls="scrum" aria-selected="true">Scrum</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="kanban-tab" data-toggle="tab" href="#kanban" role="tab" aria-controls="kanban" aria-selected="false">Kanban</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="burndown-tab" data-toggle="tab" href="#burndown" role="tab" aria-controls="burndown" aria-selected="false">Grafico Burndown</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="backlog-tab" data-toggle="tab" href="#backlog" role="tab" aria-controls="backlog" aria-selected="false">Backlog do Produto</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="sprints-tab" data-toggle="tab" href="#sprints" role="tab" aria-controls="sprints" aria-selected="false">Sprints</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="scrum" role="tabpanel" aria-labelledby="scrum-tab"> <%=render "scrum" %> </div>
+  <div class="tab-pane fade" id="kanban" role="tabpanel" aria-labelledby="kanban-tab"></div>
+  <div class="tab-pane fade" id="burndown" role="tabpanel" aria-labelledby="burndown-tab"></div>
+  <div class="tab-pane fade" id="backlog" role="tabpanel" aria-labelledby="backlog-tab"></div>
+  <div class="tab-pane fade" id="sprints" role="tabpanel" aria-labelledby="sprints-tab"></div>
+</div>

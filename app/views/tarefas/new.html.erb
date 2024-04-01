@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Tarefa</title>
+  <%= stylesheet_link_tag 'index', media: 'all' %>
+</head>
+
+
+<body>
+    <div class="container">
+
+        <form action="<%= projeto_tarefas_path(@projeto_id) %>" method="post" class="form-container login-form">
+            <!-- Campo para descrição da tarefa -->
+
+            <div class="form-group">
+                <h1>Nova Tarefa</h1>
+                <label for="descricao_tarefa" class="form-label">Descrição da Tarefa:</label><br>
+                <input type="text" id="descricao_tarefa" name="descricao_tarefa" class="form-input" required>
+            </div>
+
+            <label for="etapa">Etapa:</label>
+            <select name="etapa" id="etapa">
+              <option value="1">Backlog</option>
+              <option value="2">To do</option>
+              <option value="3">Doing</option>
+              <option value="4">Done</option>
+              <option value="5">Testing</option>
+            </select>
+            
+            <!-- Campo para prioridade da tarefa -->
+            <div class="form-group">
+                <label for="prioridade" class="form-label">Prioridade:</label><br>
+                <input type="text" id="prioridade" name="prioridade" class="form-input" required>
+            </div>
+
+            <label for="user_id">Responsável:</label>
+                <select name="user_id" id="user_id">
+                    <% @membrosUsers.each do |user| %>
+                        <option value="<%= user.id %>"><%= user.nome %></option>
+                    <% end %>
+                </select>
+
+            
+            <!-- Campo para data de vencimento da tarefa -->
+            <div class="form-group">
+                <label for="vencimento" class="form-label">Data de Vencimento:</label><br>
+                <input type="date" id="vencimento" name="vencimento" class="form-input" required>
+            </div>
+            
+            <!-- Botão de envio do formulário -->
+            <button type="submit" class="btn btn-primary">Salvar Tarefa</button>
+        </form>
+    </div>
+</body>
+</html>
