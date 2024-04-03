@@ -26,6 +26,34 @@ class TarefasController < ApplicationController
         end
     end
 
+    def edit
+        @projeto = Projeto.find(params[:projeto_id])
+        @tarefa = Tarefa.find_by(id: params[:id], projeto_id: @projeto.id)
+
+        @membros = Membro.where(projeto_id: @projeto.id)
+        @membrosUsers = []
+
+        @membros.each do |membro|
+
+            @membrosUsers.push(User.find(membro.user_id))
+
+        end
+
+    end
+
+    def update
+        
+        @projeto = Projeto.find(params[:projeto_id])
+        @tarefa = Tarefa.find_by(id: params[:id], projeto_id: @projeto.id)
+
+
+        if @tarefa.update(tarefa_params)
+            redirect_to @projeto, notice: 'Tarefa atualizada!'
+        else
+            redirect_to @projeto, notice: 'Erro ao atualizar tarefa!'
+        end
+      end
+
     def create
         usuarioAtual = current_user
         @projeto = Projeto.find(params[:projeto_id]) # Alterado para encontrar o projeto corretamente
@@ -50,7 +78,7 @@ class TarefasController < ApplicationController
     private
       
     def tarefa_params
-        params.permit(:descricao_tarefa, :etapa, :prioridade, :user_id, :vencimento)
+        params.permit(:id, :descricao_tarefa, :etapa, :prioridade, :user_id, :vencimento)
     end
       
 

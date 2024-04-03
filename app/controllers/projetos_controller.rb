@@ -15,7 +15,7 @@ class ProjetosController < ApplicationController
         flash[:alert] = "Acesso negado! Você não tem permissão para acessar esta página."
         redirect_to root_path # ou para qualquer outra página que deseje
       else
-        @membroUser = membro[0]
+        @membroUser = User.find(membro[0].user_id)
         @projeto = projeto
       end
     rescue ActiveRecord::RecordNotFound

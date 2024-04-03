@@ -29,5 +29,6 @@
   <%= @responsavel %>
 </div>
 
-  <%= link_to "Voltar", projeto_path(id: @projeto.id), class: "back-link" %>
+  <%= link_to "Voltar", projeto_path(tarefa_id: @projeto.id), class: "back-link" %>
+  <%= link_to "Editar", edit_projeto_tarefa_path(@projeto, @tarefa), class: "back-link" %>
 <% end %>

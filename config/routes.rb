@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       get 'entrar' # Rota para exibir o formulário de entrada
       post 'entrar_projeto' # Rota para processar a entrada no projeto
     end
-    resources :tarefas, only: [:new, :create, :show, :edit]
+    resources :tarefas
   end
 
   get 'profile', to: 'profiles#show'
