@@ -14,7 +14,7 @@
 
 .row{
  
-    background-color: rgba(255, 255, 255, 0.7);
+    background-image: linear-gradient(to bottom, #214661, rgb(154, 187, 210));
     padding: 30px;
     display: flex;
     align-items: center;

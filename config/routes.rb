@@ -19,7 +19,9 @@ Rails.application.routes.draw do
       get 'entrar' # Rota para exibir o formulário de entrada
       post 'entrar_projeto' # Rota para processar a entrada no projeto
     end
-    resources :tarefas
+    resources :tarefas do
+      get 'avancar_etapa', on: :member
+    end
   end
 
   get 'profile', to: 'profiles#show'

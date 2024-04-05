@@ -2,17 +2,29 @@ class TarefasController < ApplicationController
 
 
     def new
-        @projeto_id = params[:projeto_id]
-        @tarefa = Tarefa.new
-        @membros = Membro.where(projeto_id: @projeto_id)
-        @membrosUsers = []
 
-        @membros.each do |membro|
+        # verificar se o current user que quer criar a tarefa tem cargo de SM
 
-            @membrosUsers.push(User.find(membro.user_id))
+        user = current_user
+        membroAtual = Membro.find_by(projeto_id:params[:projeto_id], user_id: user.id)
+        
+        if membroAtual.cargo  == "SM"
 
+            @projeto_id = params[:projeto_id]
+            @tarefa = Tarefa.new
+            @membros = Membro.where(projeto_id: @projeto_id)
+            @membrosUsers = []
+
+            @membros.each do |membro|
+
+                @membrosUsers.push(User.find(membro.user_id))
+
+            end
+        
+        else
+            @projeto = Projeto.find(params[:projeto_id])
+            redirect_to @projeto, notice: 'Apenas o Scrum Master pode adicionar tarefas ao quadro scrum!'
         end
-
     end
 
     def show
@@ -27,16 +39,29 @@ class TarefasController < ApplicationController
     end
 
     def edit
-        @projeto = Projeto.find(params[:projeto_id])
-        @tarefa = Tarefa.find_by(id: params[:id], projeto_id: @projeto.id)
 
-        @membros = Membro.where(projeto_id: @projeto.id)
-        @membrosUsers = []
+        # verificar se o current user que quer editar a tarefa tem cargo de SM
 
-        @membros.each do |membro|
+        user = current_user
+        membroAtual = Membro.find_by(projeto_id:params[:projeto_id], user_id: user.id)
+        
+        if membroAtual.cargo  == "SM"
 
-            @membrosUsers.push(User.find(membro.user_id))
+            @projeto = Projeto.find(params[:projeto_id])
+            @tarefa = Tarefa.find_by(id: params[:id], projeto_id: @projeto.id)
 
+            @membros = Membro.where(projeto_id: @projeto.id)
+            @membrosUsers = []
+
+            @membros.each do |membro|
+
+                @membrosUsers.push(User.find(membro.user_id))
+
+            end
+
+        else
+            @projeto = Projeto.find(params[:projeto_id])
+            redirect_to @projeto, notice: 'Apenas o Scrum Master pode editar tarefas do quadro scrum!'
         end
 
     end
@@ -53,6 +78,19 @@ class TarefasController < ApplicationController
             redirect_to @projeto, notice: 'Erro ao atualizar tarefa!'
         end
       end
+
+    def avancar_etapa
+
+        @projeto = Projeto.find(params[:projeto_id])
+        @tarefa = Tarefa.find(params[:id])
+
+        if @tarefa.avancar_etapa
+            redirect_to @projeto, notice: 'Etapa da tarefa avançada com sucesso!'
+        else
+            redirect_to @projeto, alert: 'Erro ao avançar etapa da tarefa!'
+        end
+        
+    end
 
     def create
         usuarioAtual = current_user
