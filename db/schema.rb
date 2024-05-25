@@ -11,9 +11,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_03_29_041751) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "membros", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "projeto_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "projeto_id", null: false
     t.string "cargo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -33,10 +36,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_29_041751) do
     t.text "descricao_tarefa"
     t.integer "etapa"
     t.integer "prioridade"
-    t.integer "projeto_id", null: false
+    t.bigint "projeto_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.date "vencimento"
     t.index ["projeto_id"], name: "index_tarefas_on_projeto_id"
     t.index ["user_id"], name: "index_tarefas_on_user_id"
@@ -57,6 +60,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_29_041751) do
 
   add_foreign_key "membros", "projetos"
   add_foreign_key "membros", "users"
-  add_foreign_key "tarefas", "Projetos", column: "projeto_id"
+  add_foreign_key "tarefas", "projetos"
   add_foreign_key "tarefas", "users"
 end
