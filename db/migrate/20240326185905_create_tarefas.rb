@@ -4,7 +4,7 @@ class CreateTarefas < ActiveRecord::Migration[7.1]
       t.text :descricao_tarefa
       t.integer :etapa
       t.integer :prioridade
-      t.references :Projeto, null: false, foreign_key: true
+      t.references :projeto, null: false, foreign_key: true
 
       t.timestamps
     end
