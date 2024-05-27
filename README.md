@@ -1,11 +1,10 @@
- # Gerenciador de projetos que usa metodologias ageis de maneira compartilhada.
+ # Gerenciador de projetos que usa metodologias ágeis de maneira compartilhada.
  
- # índice:
+ # Índice:
  - [Visão Geral](#visao-geral)
  - [Tecnologias Utilizadas](#tecnologias)
- - [Informações Tecnicas](#informacoes)
+ - [Informações Técnicas](#informacoes)
  - [Modelo Relacional](#modelo)
- - [Informações Tecnicas](#informacoes)
  - [Funcionalidades](#funcionalidades)
 
 <a id="visao-geral"></a>
