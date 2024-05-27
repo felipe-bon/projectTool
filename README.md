@@ -1,9 +1,25 @@
-# Gerenciador de projetos que usa metodologias ageis de maneira compartilhada.
+ # Gerenciador de projetos que usa metodologias ageis de maneira compartilhada.
+ 
+ # índice:
+ - [Visão Geral](#visao-geral)
+ - [Tecnologias Utilizadas](#tecnologias)
+ - [Informações Tecnicas](#informacoes)
+ - [Modelo Relacional](#modelo)
+ - [Informações Tecnicas](#informacoes)
+ - [Funcionalidades](#funcionalidades)
+
+<a id="visao-geral"></a>
+
+# Visão Geral
 
 É uma ferramenta para gerenciar projetos de software de forma compartilhada, utilizando metodologias ágeis.
 
-Um usuário pode criar ou entrar em um projeto existente, cada projeto possui um quadro Scrum em que os integrantes do projeto podem visualizar as tarefas, e de acordo com as permições de cada cargo, podem adicionar tarefas, nomear responsáveis por tarefas entre outras funcionalidades.
+Um usuário pode criar ou entrar em um projeto existente, cada projeto possui um quadro Scrum em que os integrantes do projeto podem visualizar as tarefas, e de acordo com as permições de cada cargo, podem adicionar tarefas, nomear responsáveis por tarefas entre outras funcionalidades. 
 
+Acesse para testar: https://projecttool.onrender.com/
+
+
+<a id="tecnologias"></a>
 
 # Tecnologias
 
@@ -14,6 +30,7 @@ Este é um projeto feito utilizando o framework **Ruby on Rails, JavaScript, HTM
 
 </br>
 
+<a id="informacoes"></a>
 # Informações Técnicas
 
 Para o desenvolvimento deste software foi usada a linguagem Ruby juntamente com o framework Ruby on Rails, html e css para o front-end, para a persistência dos dados foi usado o banco de dados relacional SQLite3 e posteriormente substituído pelo postgreSQL.
@@ -38,9 +55,12 @@ Além das camadas que compõem o padrão MVC, o projeto possui uma camada adicio
 
 # Modelo Relacional
 
+<a id="modelo"></a>
+
 <img src="/assetsReadme/DiagramaModeloRelacional.png" width=1000 />
 
-# Recursos
+<a id="funcionalidades"></a>
+# Funcionalidades
 
 - Registro e autenticação de usuário com **devise**.
 - Usuários podem criar projetos ou ingressar em projetos existentes.
@@ -49,5 +69,3 @@ Além das camadas que compõem o padrão MVC, o projeto possui uma camada adicio
 - Cada tarefa possui uma pessoa responsável por ela, e apenas o responsável pode avançar a tarefa no quadro Scrum.
 - Product owner pode escrever user stories (ainda não foi feito).
 - Todos os integrantes de um projeto podem ver o quadro Scrum.
-
-
