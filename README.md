@@ -10,6 +10,8 @@
 
 <a id="visao-geral"></a>
 
+</br>
+
 # Visão Geral
 
 É uma ferramenta para gerenciar projetos de software de forma compartilhada, utilizando metodologias ágeis.
@@ -21,6 +23,8 @@ Acesse para testar: https://projecttool.onrender.com/
 
 <a id="tecnologias"></a>
 
+</br>
+
 # Tecnologias
 
 
@@ -31,6 +35,9 @@ Este é um projeto feito utilizando o framework **Ruby on Rails, JavaScript, HTM
 </br>
 
 <a id="informacoes"></a>
+
+</br>
+
 # Informações Técnicas
 
 Para o desenvolvimento deste software foi usada a linguagem Ruby juntamente com o framework Ruby on Rails, html e css para o front-end, para a persistência dos dados foi usado o banco de dados relacional SQLite3 e posteriormente substituído pelo postgreSQL.
@@ -53,13 +60,18 @@ As pastas de view tem subpastas relacionadas aos nomes de cada modelo, cada subp
 
 Além das camadas que compõem o padrão MVC, o projeto possui uma camada adicional encarregada da persistência dos dados. Essa camada é representada pela pasta "db", que contém os schemas para a criação das tabelas no banco de dados, sendo este postgreSQL. As tabelas, por sua vez, são representadas pelos modelos do projeto.
 
-# Modelo Relacional
-
 <a id="modelo"></a>
+
+</br>
+
+# Modelo Relacional
 
 <img src="/assetsReadme/DiagramaModeloRelacional.png" width=1000 />
 
 <a id="funcionalidades"></a>
+
+</br>
+
 # Funcionalidades
 
 - Registro e autenticação de usuário com **devise**.
