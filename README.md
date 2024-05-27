@@ -2,7 +2,7 @@
 
 É uma ferramenta para gerenciar projetos de software de forma compartilhada, utilizando metodologias ágeis.
 
-Um usuário pode criar ou entrar em um projeto existente, cada projeto possui um quadro Kanban em que os integrantes do projeto podem visualizar as tarefas, e de acordo com as permições de cada cargo, podem adicionar tarefas, nomear responsáveis por tarefas entre outras funcionalidades.
+Um usuário pode criar ou entrar em um projeto existente, cada projeto possui um quadro Scrum em que os integrantes do projeto podem visualizar as tarefas, e de acordo com as permições de cada cargo, podem adicionar tarefas, nomear responsáveis por tarefas entre outras funcionalidades.
 
 
 # Tecnologias
@@ -38,4 +38,16 @@ Além das camadas que compõem o padrão MVC, o projeto possui uma camada adicio
 
 # Modelo Relacional
 
-<img src="/assetsReadme/ModeloRelacional.png" width=1000 />
+<img src="/assetsReadme/DiagramaModeloRelacional.png" width=1000 />
+
+# Recursos
+
+- Registro e autenticação de usuário com **devise**.
+- Usuários podem criar projetos ou ingressar em projetos existentes.
+- Cada usuário pode ingressar em um projeto como **dev**, **scrum master** ou **product owner**.
+- Dentro de um projeto o scrum master pode criar, editar e deletar uma tarefa.
+- Cada tarefa possui uma pessoa responsável por ela, e apenas o responsável pode avançar a tarefa no quadro Scrum.
+- Product owner pode escrever user stories (ainda não foi feito).
+- Todos os integrantes de um projeto podem ver o quadro Scrum.
+
+
