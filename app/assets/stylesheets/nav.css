@@ -8,3 +8,21 @@
     color: black;
   }
   
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Cor de fundo da navbar */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    z-index: 1000; /* Garante que a navbar esteja acima de outros elementos */
+  }
+
+  .nav{
+    justify-content: center; /* Centraliza verticalmente */
+  }
+
+  .content {
+    padding-top: 60px; /* Altura da navbar (ajuste conforme necessário) */
+  }

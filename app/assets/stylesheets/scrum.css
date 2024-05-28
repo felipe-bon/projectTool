@@ -2,18 +2,127 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-
-
 .container {
   display: flex;
   flex-direction: column; /* Organiza os itens em coluna */
   justify-content: center; /* Centraliza verticalmente */
   align-items: center; /* Centraliza horizontalmente */
   height: 100%; /* Preenche a altura da janela */
+  padding: 20px;
 }
 
-.row{
- 
+
+h1, h2 {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.projeto_titulo {
+  color: whitesmoke;
+}
+
+p {
+  font-weight: bold; /* Texto em negrito */
+}
+
+.col-md-4 {
+  background-color: #f5f5f5; /* Cor de fundo cinza claro */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 10px; /* Borda arredondada */
+  margin: 10px;
+  border: 1px solid #ccc;
+  flex: 0 0 300px; /* Largura fixa para colunas */
+  max-height: 500px; /* Altura fixa para colunas */
+  overflow-y: auto; /* Habilita a rolagem vertical */
+  display: inline-block;
+}
+
+.card {
+  margin-bottom: 15px; /* Margem inferior */
+  border-radius: 20px; /* Borda arredondada */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.card-title {
+  font-size: 18px; /* Tamanho da fonte */
+  color: #333; /* Cor do texto */
+}
+
+.card-text {
+  color: #777; /* Cor do texto */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Media queries para responsividade */
+
+/* Ajustes para telas menores que 768px */
+@media (max-width: 1500px) {
+  .scrum {
+    padding: 5px; /* Reduz o padding */
+  }
+
+  .col-md-4 {
+    flex: 1 0 250px; /* Largura reduzida para colunas em telas menores */
+    justify-content: center; /* Alinha os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    max-height: 400px; /* Altura reduzida para colunas em telas menores */
+    padding: 15px; /* Reduz o padding */
+  }
+
+  .card {
+    margin-bottom: 10px; /* Reduz a margem inferior */
+  }
+
+  .card-title {
+    font-size: 16px; /* Reduz o tamanho da fonte */
+  }
+
+  .button {
+    padding: 8px 16px; /* Reduz o padding do botão */
+  }
+
+  .scrum {
+    display: flex;
+    flex-direction: row; /* Organiza as colunas horizontalmente */
+    width: 100%;
+    /* overflow-x: auto; /* Habilita a rolagem horizontal */
+    white-space: nowrap; /* Impede quebras de linha dentro do contêiner */
+    padding: 10px;
+    background-image: linear-gradient(to bottom, #214661, rgb(154, 187, 210));
+    border-radius: 10px;
+  }
+}
+
+/* Ajustes para telas com largura mínima de 1000px */
+@media (min-width: 1500px) {
+  .scrum {
+    flex-wrap: nowrap; /* Impede quebras de linha */
+  }
+
+  .col-md-4 {
+    flex: 0 0 300px; /* Largura fixa para colunas */
+  }
+
+
+  .row{
+  
     background-image: linear-gradient(to bottom, #214661, rgb(154, 187, 210));
     padding: 30px;
     display: flex;
@@ -24,83 +133,13 @@
     overflow-y: hidden;
     white-space:nowrap;
     display:inline-block;
-    /* position: absolute; Define a posição absoluta */
-    /* top: 50%; Define o topo a 50% da altura do pai */
-    /* left: 50%; Define a esquerda a 50% da largura do pai */
-    /* transform: translate(-50%, -50%); Move a div de volta metade da sua largura e altura */
     border-radius: 10px; /* Borda arredondada */
-}
-
-/* Estilo para o título do projeto */
-h1 {
-    color: #333; /* Cor do texto */
-    margin-bottom: 20px; /* Margem inferior */
-    text-align: center;
   }
 
-.projeto_titulo{
-  color:whitesmoke
-}
-  
-  /* Estilo para o nome do projeto */
-  p {
-    font-weight: bold; /* Texto em negrito */
-  }
-  
-  /* Estilo para cada etapa do quadro Scrum */
-  .col-md-4 {
-    background-color: #f5f5f5; /* Cor de fundo cinza claro */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Borda arredondada */
-    margin-bottom: 20px; /* Margem inferior */
-    border: 1px solid #ccc;
-    border: 1px solid #ccc; /* Adicionando uma borda para separar as colunas */
-    height: 500px; /* Definindo uma altura máxima para as colunas */
+  .col-md-4{
+    height: 500px; /* Altura fixa para colunas */
     top: 50%; /* Define o topo a 50% da altura do pai */
     transform: translate(0%, -50%); /* Move a div de volta metade da sua largura e altura */
-    overflow-y: auto; /* Permitindo rolagem vertical quando houver mais conteúdo do que o espaço disponível */
-    display:inline-block;
-  }
-  
-  /* Estilo para o título de cada etapa */
-  h2 {
-    color: #333; /* Cor do texto */
   }
 
-
-  h1,h2 {
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  /* Estilo para os cartões de tarefa */
-  .card {
-    margin-bottom: 15px; /* Margem inferior */
-    border-radius: 20px; /* Borda arredondada */
-    overflow-x:hidden;
-    overflow-y: auto;
-  }
-  
-  /* Estilo para o título da tarefa */
-  .card-title {
-    font-size: 18px; /* Tamanho da fonte */
-    color: #333; /* Cor do texto */
-  }
-  
-  /* Estilo para o texto da etapa da tarefa */
-  .card-text {
-    color: #777; /* Cor do texto */
-  }
-
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #0056b3;
 }

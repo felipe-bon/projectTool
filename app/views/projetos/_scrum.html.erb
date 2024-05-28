@@ -1,108 +1,104 @@
 <%= stylesheet_link_tag "scrum", "data-turbo-track": "reload" %>
 
-
-    <div class="container">
-    
-      <div class="row">
-      
-        <div class="col-md-4">
-          <h2>Backlog</h2>
-          <% @projeto.tarefas.where(etapa: 1).each do |tarefa| %>
-            <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-content">
+<div class="container">
+  <div class="scrum">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Backlog</h2>
+        <% @projeto.tarefas.where(etapa: 1).each do |tarefa| %>
+          <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
                   <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
                   <% if @membroUser.id == tarefa.user_id %>
                     <%= link_to 'Avançar Etapa', avancar_etapa_projeto_tarefa_path(projeto_id: @projeto.id, id: tarefa.id), method: :PATCH, data: { turbo: false } %>
                   <% end %>
-                  </div>
                 </div>
               </div>
-            <% end %>
+            </div>
           <% end %>
-        </div>
-        
-        <div class="col-md-4">
-          <h2>To do</h2>
-          <% @projeto.tarefas.where(etapa: 2).each do |tarefa| %>
-            <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-content">
+        <% end %>
+      </div>
+
+      <div class="col-md-4">
+        <h2>To do</h2>
+        <% @projeto.tarefas.where(etapa: 2).each do |tarefa| %>
+          <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
                   <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
                   <% if @membroUser.id == tarefa.user_id %>
                     <%= link_to 'Avançar Etapa', avancar_etapa_projeto_tarefa_path(projeto_id: @projeto.id, id: tarefa.id), method: :PATCH, data: { turbo: false } %>
                   <% end %>
-                  </div>
                 </div>
               </div>
-            <% end %>
+            </div>
           <% end %>
-        </div>
+        <% end %>
+      </div>
 
-      
-        <div class="col-md-4">
-          <h2>Doing</h2>
-          <% @projeto.tarefas.where(etapa: 3).each do |tarefa| %>
-            <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-content">
+      <div class="col-md-4">
+        <h2>Doing</h2>
+        <% @projeto.tarefas.where(etapa: 3).each do |tarefa| %>
+          <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
                   <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
                   <% if @membroUser.id == tarefa.user_id %>
                     <%= link_to 'Avançar Etapa', avancar_etapa_projeto_tarefa_path(projeto_id: @projeto.id, id: tarefa.id), method: :PATCH, data: { turbo: false } %>
                   <% end %>
-                  </div>
                 </div>
               </div>
-            <% end %>
+            </div>
           <% end %>
-        </div>
+        <% end %>
+      </div>
 
-        <div class="col-md-4">
-          <h2>Testing</h2>
-          <% @projeto.tarefas.where(etapa: 4).each do |tarefa| %>
-            <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-content">
+      <div class="col-md-4">
+        <h2>Testing</h2>
+        <% @projeto.tarefas.where(etapa: 4).each do |tarefa| %>
+          <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
                   <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
                   <% if @membroUser.id == tarefa.user_id %>
                     <%= link_to 'Avançar Etapa', avancar_etapa_projeto_tarefa_path(projeto_id: @projeto.id, id: tarefa.id), method: :PATCH, data: { turbo: false } %>
                   <% end %>
-                  </div>
                 </div>
               </div>
-            <% end %>
+            </div>
           <% end %>
-        </div>
+        <% end %>
+      </div>
 
-        <div class="col-md-4">
-          <h2>Done</h2>
-          <% @projeto.tarefas.where(etapa: 5).each do |tarefa| %>
-            <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-content">
+      <div class="col-md-4">
+        <h2>Done</h2>
+        <% @projeto.tarefas.where(etapa: 5).each do |tarefa| %>
+          <%= link_to projeto_tarefa_path(projeto_id: @projeto.id, tarefa_id: tarefa.id) do %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
                   <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
                   <% if @membroUser.id == tarefa.user_id %>
                     <h5 class="card-title"> entregue por:<%= @membroUser.nome %></h5>
                   <% end %>
-                  </div>
                 </div>
               </div>
-            <% end %>
+            </div>
           <% end %>
-        </div>
-      
-      </div>     
-        <a href="<%= new_projeto_tarefa_path(projeto_id: @projeto.id) %>" class="button">Criar Nova Tarefa</a>
-    </div>
+        <% end %>
+      </div>
 
-    </div>
+    </div>     
+  </div>
+  <a href="<%= new_projeto_tarefa_path(projeto_id: @projeto.id) %>" class="button">Criar Nova Tarefa</a>
+</div>
