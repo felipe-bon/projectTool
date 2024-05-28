@@ -17,7 +17,7 @@
 
 Um usuário pode criar ou entrar em um projeto existente, cada projeto possui um quadro Scrum em que os integrantes do projeto podem visualizar as tarefas, e de acordo com as permições de cada cargo, podem adicionar tarefas, nomear responsáveis por tarefas entre outras funcionalidades. 
 
-Acesse para testar: https://projecttool.onrender.com/
+Acesse para testar: https://projecttool.onrender.com
 
 
 <a id="tecnologias"></a>

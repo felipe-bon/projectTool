@@ -14,6 +14,13 @@ body {
   margin-top: 10px;
 }
 
+.formularios{
+  display: flex;
+  flex-direction: row; /* Arrange items in a column */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
 .form-container {
   background-color: #444;
   padding: 20px;
@@ -22,6 +29,19 @@ body {
   margin: 10px;
   width: 500px;
 }
+
+  /* Media query for small screens */
+  @media (max-width: 576px) {
+    .formularios {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .form-container {
+      width: 90%;
+      max-width: 400px;
+    }
+  }
 
 .form-container h2 {
   margin-top: 0;
