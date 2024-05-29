@@ -91,9 +91,7 @@
               <div class="card-body">
                 <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
-                  <% if @membroUser.id == tarefa.user_id %>
-                    <h5 class="card-title"> entregue por:<%= @membroUser.nome %></h5>
-                  <% end %>
+                  <h5 class="card-title">Entregue por: <%= (@membrosUsers.find { |user| user.id == tarefa.user_id }.nome) %></h5>
                 </div>
               </div>
             </div>
