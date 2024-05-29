@@ -17,6 +17,15 @@ class ProjetosController < ApplicationController
       else
         @membroUser = User.find(membro[0].user_id)
         @projeto = projeto
+        membros = Membro.where(projeto_id: projeto.id)
+        @membrosUsers = []
+
+          membros.each do |membro|
+
+            @membrosUsers.push(User.find(membro.user_id))
+
+          end
+
       end
     rescue ActiveRecord::RecordNotFound
       redirect_to root_path, notice: 'Projeto não encontrado!'

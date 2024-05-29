@@ -12,6 +12,7 @@
                 <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
                   <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
+                  <h5 class="card-title">responsavel: <%= (@membrosUsers.find { |user| user.id == tarefa.user_id }.nome) %></h5>
                   <% if @membroUser.id == tarefa.user_id %>
                     <%= link_to 'Avançar Etapa', avancar_etapa_projeto_tarefa_path(projeto_id: @projeto.id, id: tarefa.id), method: :PATCH, data: { turbo: false } %>
                   <% end %>
@@ -31,6 +32,7 @@
                 <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
                   <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
+                  <h5 class="card-title">responsavel: <%= (@membrosUsers.find { |user| user.id == tarefa.user_id }.nome) %></h5>
                   <% if @membroUser.id == tarefa.user_id %>
                     <%= link_to 'Avançar Etapa', avancar_etapa_projeto_tarefa_path(projeto_id: @projeto.id, id: tarefa.id), method: :PATCH, data: { turbo: false } %>
                   <% end %>
@@ -50,6 +52,7 @@
                 <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
                   <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
+                  <h5 class="card-title">responsavel: <%= (@membrosUsers.find { |user| user.id == tarefa.user_id }.nome) %></h5>
                   <% if @membroUser.id == tarefa.user_id %>
                     <%= link_to 'Avançar Etapa', avancar_etapa_projeto_tarefa_path(projeto_id: @projeto.id, id: tarefa.id), method: :PATCH, data: { turbo: false } %>
                   <% end %>
@@ -69,6 +72,7 @@
                 <div class="card-content">
                   <h5 class="card-title"><%= tarefa.descricao_tarefa %></h5>
                   <h5 class="card-title">vence em: <%= tarefa.vencimento %></h5>
+                  <h5 class="card-title">responsavel: <%= (@membrosUsers.find { |user| user.id == tarefa.user_id }.nome) %></h5>
                   <% if @membroUser.id == tarefa.user_id %>
                     <%= link_to 'Avançar Etapa', avancar_etapa_projeto_tarefa_path(projeto_id: @projeto.id, id: tarefa.id), method: :PATCH, data: { turbo: false } %>
                   <% end %>
