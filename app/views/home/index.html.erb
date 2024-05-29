@@ -19,7 +19,10 @@
       <% if user_signed_in? %>
         <p class="lead">Bem vindo!</p>
       <%else%>
-        <p class="lead">Entre ou crie uma conta.</p>
+      <p class="lead">
+        <%= link_to 'Entre', new_user_session_path %> ou <%= link_to 'crie uma conta', new_user_registration_path %>.
+      </p>
+    
       <%end%>
     </div>
   </section>
