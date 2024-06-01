@@ -65,7 +65,7 @@ Além das camadas que compõem o padrão MVC, o projeto possui uma camada adicio
 
 # Modelo Relacional
 
-<img src="/assetsReadme/DiagramaModeloRelacional.png" width=1000 />
+<img src="/public/assetsReadme/DiagramaModeloRelacional.png" width=1000 />
 
 <a id="funcionalidades"></a>
 

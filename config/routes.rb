@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'profiles#show'
 
+  get 'image', to: 'images#show'
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
